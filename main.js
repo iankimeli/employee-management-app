@@ -1,10 +1,4 @@
-// ============================================
-//  EMS — Employee Management System
-//  main.js
-//  Kabarak University — Web App Programming
-// ============================================
 
-/* ---- FORM: Submit ---- */
 function submitForm() {
   const firstname = document.getElementById('firstname')?.value.trim();
   const lastname  = document.getElementById('lastname')?.value.trim();
@@ -22,7 +16,7 @@ function submitForm() {
   clearForm();
 }
 
-/* ---- FORM: Clear ---- */
+
 function clearForm() {
   const inputs = document.querySelectorAll('input:not([type="radio"]), select');
   inputs.forEach(i => i.value = '');
@@ -30,7 +24,7 @@ function clearForm() {
   radios.forEach(r => r.checked = false);
 }
 
-/* ---- Toast notification ---- */
+
 function showToast() {
   const toast = document.getElementById('toast');
   if (!toast) return;
@@ -38,7 +32,7 @@ function showToast() {
   setTimeout(() => toast.classList.remove('show'), 3000);
 }
 
-/* ---- TABLE: Filter ---- */
+
 function filterTable() {
   const input  = document.getElementById('searchInput');
   const filter = input.value.toLowerCase();
@@ -50,7 +44,7 @@ function filterTable() {
   });
 }
 
-/* ---- TABLE: Show Details Modal ---- */
+
 function showDetails(name, position, dept, email, phone) {
   document.getElementById('modalName').textContent     = name;
   document.getElementById('modalPosition').textContent = position;
@@ -64,17 +58,17 @@ function showDetails(name, position, dept, email, phone) {
   document.getElementById('detailsModal').classList.add('open');
 }
 
-/* ---- TABLE: Close Modal ---- */
+
 function closeModal() {
   document.getElementById('detailsModal')?.classList.remove('open');
 }
 
-/* ---- TABLE: Edit ---- */
+
 function editRecord(name) {
   alert(`✏️ Edit functionality:\nYou are editing the record for "${name}".\n\nIn a full backend system, this would open a pre-filled form.`);
 }
 
-/* ---- TABLE: Delete ---- */
+
 function deleteRecord(name) {
   const confirmed = confirm(`Are you sure you want to delete the record for "${name}"?\n\nThis action cannot be undone.`);
   if (confirmed) {
@@ -82,7 +76,7 @@ function deleteRecord(name) {
   }
 }
 
-/* ---- Close modal on Escape key ---- */
+
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeModal();
 });

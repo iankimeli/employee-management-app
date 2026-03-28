@@ -1,0 +1,62 @@
+<svg width="1440" height="900" viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="orb1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3fb950" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#3fb950" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#bc8cff" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#bc8cff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb4" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3fb950" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#3fb950" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="60%" stop-color="#0d1117" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0d1117" stop-opacity="0.6"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#3fb950" stroke-width="0.4" stroke-opacity="0.12"/>
+    </pattern>
+  </defs>
+
+  <rect width="1440" height="900" fill="#0d1117"/>
+  <rect width="1440" height="900" fill="url(#grid)"/>
+
+  <ellipse cx="200" cy="180" rx="420" ry="380" fill="url(#orb1)"/>
+  <ellipse cx="1280" cy="700" rx="500" ry="400" fill="url(#orb2)"/>
+  <ellipse cx="900" cy="120" rx="350" ry="300" fill="url(#orb3)"/>
+  <ellipse cx="1100" cy="300" rx="280" ry="260" fill="url(#orb1)"/>
+  <ellipse cx="100" cy="750" rx="300" ry="250" fill="url(#orb4)"/>
+
+  <line x1="0" y1="0" x2="400" y2="900" stroke="#3fb950" stroke-width="0.5" stroke-opacity="0.06"/>
+  <line x1="1440" y1="0" x2="1000" y2="900" stroke="#58a6ff" stroke-width="0.5" stroke-opacity="0.05"/>
+  <line x1="720" y1="0" x2="400" y2="900" stroke="#3fb950" stroke-width="0.3" stroke-opacity="0.04"/>
+
+  <circle cx="120" cy="240" r="1.5" fill="#3fb950" fill-opacity="0.5"/>
+  <circle cx="380" cy="80"  r="1"   fill="#3fb950" fill-opacity="0.4"/>
+  <circle cx="680" cy="320" r="2"   fill="#58a6ff" fill-opacity="0.35"/>
+  <circle cx="950" cy="60"  r="1.5" fill="#3fb950" fill-opacity="0.45"/>
+  <circle cx="1200" cy="200" r="1"  fill="#bc8cff" fill-opacity="0.4"/>
+  <circle cx="1380" cy="450" r="2"  fill="#58a6ff" fill-opacity="0.3"/>
+  <circle cx="200" cy="600"  r="1.5" fill="#3fb950" fill-opacity="0.35"/>
+  <circle cx="500" cy="750"  r="1"   fill="#3fb950" fill-opacity="0.3"/>
+  <circle cx="800" cy="820"  r="2"   fill="#58a6ff" fill-opacity="0.25"/>
+  <circle cx="1100" cy="780" r="1.5" fill="#3fb950" fill-opacity="0.4"/>
+  <circle cx="1350" cy="860" r="1"   fill="#bc8cff" fill-opacity="0.35"/>
+  <circle cx="60" cy="480"  r="1"    fill="#58a6ff" fill-opacity="0.4"/>
+  <circle cx="440" cy="440" r="1.5"  fill="#3fb950" fill-opacity="0.3"/>
+  <circle cx="1050" cy="500" r="1"   fill="#3fb950" fill-opacity="0.35"/>
+
+  <rect x="0" y="0" width="180" height="2" fill="#3fb950" fill-opacity="0.25"/>
+  <rect x="0" y="0" width="2" height="120" fill="#3fb950" fill-opacity="0.25"/>
+  <rect x="1260" y="898" width="180" height="2" fill="#58a6ff" fill-opacity="0.2"/>
+  <rect x="1438" y="780" width="2" height="120" fill="#58a6ff" fill-opacity="0.2"/>
+
+  <rect width="1440" height="900" fill="url(#fade)"/>
+</svg>

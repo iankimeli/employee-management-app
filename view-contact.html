@@ -1,47 +1,156 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>View Contacts</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>View Contacts — EMS</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
-
 <body>
 
-<nav>
-<a href="index.html">Home</a>
-<a href="new-contact.html">New Contact</a>
-<a href="view-contacts.html">View All Contacts</a>
-</nav>
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="brand-icon"><i class="fa-solid fa-building-user"></i></span>
+      <span class="brand-text">EMS</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+      <li><a href="new-contact.html"><i class="fa-solid fa-user-plus"></i> New Contact</a></li>
+      <li><a href="view-contacts.html" class="active"><i class="fa-solid fa-users"></i> View All Contacts</a></li>
+    </ul>
+  </nav>
 
-<h2>Employee Contacts</h2>
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="page-breadcrumb"><a href="index.html">Home</a> / View Contacts</div>
+      <h1 class="page-title"><i class="fa-solid fa-users"></i> Employee Directory</h1>
+      <p class="page-sub">Browse and manage all registered employee contacts.</p>
+    </div>
+  </div>
 
-<table>
+  <!-- TABLE SECTION -->
+  <section class="table-section">
+    <div class="table-wrapper">
+      <div class="table-toolbar">
+        <div class="table-info">
+          <span class="badge-count">5 Employees</span>
+        </div>
+        <div class="table-search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Search employees..." id="searchInput" oninput="filterTable()" />
+        </div>
+        <a href="new-contact.html" class="btn btn-primary btn-sm"><i class="fa-solid fa-plus"></i> Add New</a>
+      </div>
 
-<tr>
-<th>Name</th>
-<th>Email</th>
-<th>Phone</th>
-<th>Department</th>
-<th>Actions</th>
-</tr>
+      <div class="table-scroll">
+        <table class="emp-table" id="empTable">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th><i class="fa-solid fa-user"></i> Name</th>
+              <th><i class="fa-solid fa-envelope"></i> Email</th>
+              <th><i class="fa-solid fa-phone"></i> Phone</th>
+              <th><i class="fa-solid fa-sitemap"></i> Department</th>
+              <th><i class="fa-solid fa-gear"></i> Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="row-num">01</td>
+              <td class="emp-name"><span class="avatar">AM</span> Ann Mutiga</td>
+              <td>ann.mutiga@ems.co.ke</td>
+              <td>+2547 12 345 678</td>
+              <td><span class="dept-badge it">IT</span></td>
+              <td class="actions">
+                <button class="btn-action details" onclick="showDetails('Ann Mutiga','Software Engineer','IT','ann.mutiga@ems.co.ke','+2547 12 345 678')"><i class="fa-solid fa-eye"></i> Details</button>
+                <button class="btn-action edit" onclick="editRecord('Ann Mutiga')"><i class="fa-solid fa-pen"></i> Edit</button>
+                <button class="btn-action delete" onclick="deleteRecord('Ann Mutiga')"><i class="fa-solid fa-trash"></i> Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td class="row-num">02</td>
+              <td class="emp-name"><span class="avatar">CN</span> Carren Nyaboke</td>
+              <td>c.nyaboke@ems.co.ke</td>
+              <td>+2547 23 456 789</td>
+              <td><span class="dept-badge hr">HR</span></td>
+              <td class="actions">
+                <button class="btn-action details" onclick="showDetails('Carren Nyaboke','HR Manager','Human Resources','c.nyaboke@ems.co.ke','+2547 23 456 789')"><i class="fa-solid fa-eye"></i> Details</button>
+                <button class="btn-action edit" onclick="editRecord('Carren Nyaboke')"><i class="fa-solid fa-pen"></i> Edit</button>
+                <button class="btn-action delete" onclick="deleteRecord('Carren Nyaboke')"><i class="fa-solid fa-trash"></i> Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td class="row-num">03</td>
+              <td class="emp-name"><span class="avatar">CN</span> Cecilia N. Njoroge</td>
+              <td>c.njoroge@ems.co.ke</td>
+              <td>+2547 34 567 890</td>
+              <td><span class="dept-badge fin">Finance</span></td>
+              <td class="actions">
+                <button class="btn-action details" onclick="showDetails('Cecilia Njoroge','Accountant','Finance','c.njoroge@ems.co.ke','+2547 34 567 890')"><i class="fa-solid fa-eye"></i> Details</button>
+                <button class="btn-action edit" onclick="editRecord('Cecilia Njoroge')"><i class="fa-solid fa-pen"></i> Edit</button>
+                <button class="btn-action delete" onclick="deleteRecord('Cecilia Njoroge')"><i class="fa-solid fa-trash"></i> Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td class="row-num">04</td>
+              <td class="emp-name"><span class="avatar">CO</span> Charles Onyango</td>
+              <td>c.onyango@ems.co.ke</td>
+              <td>+2547 45 678 901</td>
+              <td><span class="dept-badge ops">Operations</span></td>
+              <td class="actions">
+                <button class="btn-action details" onclick="showDetails('Charles Onyango','Operations Lead','Operations','c.onyango@ems.co.ke','+2547 45 678 901')"><i class="fa-solid fa-eye"></i> Details</button>
+                <button class="btn-action edit" onclick="editRecord('Charles Onyango')"><i class="fa-solid fa-pen"></i> Edit</button>
+                <button class="btn-action delete" onclick="deleteRecord('Charles Onyango')"><i class="fa-solid fa-trash"></i> Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td class="row-num">05</td>
+              <td class="emp-name"><span class="avatar">CM</span> Christine Mogeni</td>
+              <td>c.mogeni@ems.co.ke</td>
+              <td>+2547 56 789 012</td>
+              <td><span class="dept-badge mkt">Marketing</span></td>
+              <td class="actions">
+                <button class="btn-action details" onclick="showDetails('Christine Mogeni','Marketing Analyst','Marketing','c.mogeni@ems.co.ke','+2547 56 789 012')"><i class="fa-solid fa-eye"></i> Details</button>
+                <button class="btn-action edit" onclick="editRecord('Christine Mogeni')"><i class="fa-solid fa-pen"></i> Edit</button>
+                <button class="btn-action delete" onclick="deleteRecord('Christine Mogeni')"><i class="fa-solid fa-trash"></i> Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
 
-<tr>
-<td>John Doe</td>
-<td>john@email.com</td>
-<td>0700000000</td>
-<td>IT</td>
+  <!-- DETAILS MODAL -->
+  <div class="modal-overlay" id="detailsModal" onclick="closeModal()">
+    <div class="modal-card" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-header">
+        <div class="modal-avatar" id="modalAvatar"></div>
+        <div>
+          <h3 id="modalName"></h3>
+          <span id="modalPosition" class="modal-position"></span>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-detail"><i class="fa-solid fa-sitemap"></i> <strong>Department:</strong> <span id="modalDept"></span></div>
+        <div class="modal-detail"><i class="fa-solid fa-envelope"></i> <strong>Email:</strong> <span id="modalEmail"></span></div>
+        <div class="modal-detail"><i class="fa-solid fa-phone"></i> <strong>Phone:</strong> <span id="modalPhone"></span></div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" onclick="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
 
-<td>
-<button onclick="details()">Details</button>
-<button onclick="edit()">Edit</button>
-<button onclick="deleteContact()">Delete</button>
-</td>
+  <footer class="footer">
+    <p>&copy; 2025 Employee Management System &mdash; Kabarak University</p>
+  </footer>
 
-</tr>
-
-</table>
-
-<script src="main.js"></script>
-
+  <script src="main.js"></script>
 </body>
 </html>
